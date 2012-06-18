@@ -36,3 +36,24 @@ CMP, Czech Republic
 matas@cmp.felk.cvut.cz
 
 
+[14] - Birgi Tamersoy
+2009
+
+[15] Kellokumpu, V., Zhao, G. and Pietikäinen, M. (2010), Recognition of Human Actions Using Texture Descriptors. Machine Vision and Applications, in press (available online).
+
+[17] Ahonen, T., Hadid, A. and Pietikäinen, M. (2006), Face Description with Local Binary Patterns: Application to Face Recognition. IEEE Trans. Pattern Analysis and Machine Intelligence 28(12):2037-2041.
+
+[18] Ojala, T., Pietikäinen, M. and Harwood, D. (1996), A Comparative Study of Texture Measures with Classification Based on Feature Distributions. Pattern Recognition 19(3):51-59.
+
+[19] http://www.scholarpedia.org/article/Local_Binary_Patterns
+
+[20] 2010 International Conference on Pattern Recognition
+Counting Vehicles in Highway Surveillance Videos
+Birgi Tamersoy and J.K. Aggarwal
+Computer and Vision Research Center
+The University of Texas at Austin
+[birgi,aggarwaljk]@mail.utexas.edu
+
+Notes:
+- modify description of lbp example
+
