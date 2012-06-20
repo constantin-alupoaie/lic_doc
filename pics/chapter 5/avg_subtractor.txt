@@ -1,0 +1,33 @@
+
+Mat AvgSubtractor::segment(const Mat& frame )
+{
+	// convert to gray-level image
+	cv::cvtColor(frame, grayFrame, CV_BGR2GRAY); 
+
+	// initialize background to 1st frame
+	if (background.empty())
+		grayFrame.convertTo(background, CV_32F);
+
+	// convert background to 8U
+	background.convertTo(backgroundGray,CV_8U);
+
+	// compute difference between current image and background
+	cv::absdiff(backgroundGray,grayFrame,foreground);
+
+	// apply threshold to foreground image
+	cv::threshold(foreground, foreground,threshold,255,cv::THRESH_BINARY);
+
+	// accumulate background
+	cv::accumulateWeighted(grayFrame, background, learningRate, foreground);	
+	
+	if (this->closeHoles)
+	{
+		Mat temp_foreground_mask;
+
+		cv::erode(foreground, temp_foreground_mask, structuringElement, Point(-1,-1), 1);	
+		cv::dilate(temp_foreground_mask, foreground, structuringElement, Point(-1,-1),2);		
+		cv::erode(foreground, temp_foreground_mask, structuringElement, Point(-1,-1),2);	
+	}
+	
+	return foreground;
+}
